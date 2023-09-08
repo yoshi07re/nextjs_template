@@ -1,0 +1,33 @@
+import { tv } from 'tailwind-variants';
+
+import { forwardRef } from '@/lib/forwardRef';
+import { ComponentWithAs } from '@/types/component';
+
+export type {{name}}Props = {
+  variant?: {{name}}Variant;
+};
+
+const {{name}} = tv({
+  base: '',
+  variants: {
+    variant: {
+    },
+  },
+});
+
+export type {{name}}Variant = keyof typeof {{name}}.variants.variant;
+
+export const {{name}}: ComponentWithAs<'{{name}}', {{name}}Props> = forwardRef(
+  (
+    { as: Component = '{{name}}', variant = '', className, ...props },
+    ref,
+  ) => {
+    return (
+      <Component
+        ref={ref}
+        {...props}
+        className={{camelCase name}}({ variant, className })
+      />
+    );
+  },
+);
