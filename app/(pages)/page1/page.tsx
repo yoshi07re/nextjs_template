@@ -1,4 +1,18 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+const title = 'page1';
+const url = '';
+
+export const metadata: Metadata = {
+  title: title,
+  openGraph: {
+    url,
+  },
+  alternates: {
+    canonical: url,
+  },
+};
 
 const Sample = () => {
   return (
