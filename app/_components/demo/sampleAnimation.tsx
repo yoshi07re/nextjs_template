@@ -61,7 +61,6 @@ export const SampleAnimation = ({
     onLeave: () => {
       if (ref.current) {
         gsap.to(ref.current, {
-          opacity: 0,
           y: dir === 'y' ? -40 : 0,
           x: dir === 'x' ? -40 : 0,
           duration: second,
@@ -71,7 +70,7 @@ export const SampleAnimation = ({
     },
   });
   return (
-    <div className="opacity-0" ref={ref}>
+    <div className="opacity-0 will-change-[opacity,transfrom]" ref={ref}>
       {children}
     </div>
   );
