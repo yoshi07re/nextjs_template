@@ -39,9 +39,6 @@ export const SampleAnimation = ({
               x: 0,
               duration: second,
               ease: 'power3.out',
-              stagger: {
-                each: 0.02,
-              },
             },
           );
         } else if (ref.current) {
@@ -58,15 +55,12 @@ export const SampleAnimation = ({
           x: dir === 'x' ? -24 : 0,
           duration: second,
           ease: 'power3.out',
-          stagger: {
-            each: 0.02,
-          },
         });
       }
     },
   });
   return (
-    <div className="opacity-0" ref={ref}>
+    <div className="opacity-0 will-change-[opacity]" ref={ref}>
       {children}
     </div>
   );
