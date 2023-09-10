@@ -70,7 +70,7 @@ export const SampleAnimation = ({
     },
   });
   return (
-    <div className="opacity-0 will-change-[opacity,transfrom]" ref={ref}>
+    <div className="opacity-0" ref={ref}>
       {children}
     </div>
   );
