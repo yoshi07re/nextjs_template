@@ -33,7 +33,7 @@ export const PageTransitionAnimation = ({ children }: PageTransitionProps) => {
     onEveryLeave: () => {
       gsap.to(ref.current, {
         opacity: 0,
-        y: 24,
+        y: 40,
         duration: second,
         ease: 'power3.out',
       });
@@ -49,7 +49,7 @@ export const PageTransitionAnimation = ({ children }: PageTransitionProps) => {
   });
 
   return (
-    <div className="will-change-[opacity]" ref={ref}>
+    <div className="will-change-[opacity,transform]" ref={ref}>
       {children}
     </div>
   );
