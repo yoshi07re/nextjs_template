@@ -13,27 +13,9 @@ export const PageTransitionAnimation = ({ children }: PageTransitionProps) => {
   const { second } = useMekuriDuration();
 
   useMekuriAnimation({
-    onOnce: () => {
-      if (ref.current) {
-        gsap.fromTo(
-          ref.current,
-          {
-            opacity: 0,
-            y: 64,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: second,
-            ease: 'power3.out',
-          },
-        );
-      }
-    },
     onEveryLeave: () => {
       gsap.to(ref.current, {
         opacity: 0,
-        y: 40,
         duration: second,
         ease: 'power3.out',
       });
@@ -41,7 +23,6 @@ export const PageTransitionAnimation = ({ children }: PageTransitionProps) => {
     onEveryEnter: () => {
       gsap.to(ref.current, {
         opacity: 1,
-        y: 0,
         duration: second,
         ease: 'power3.out',
       });
@@ -49,7 +30,7 @@ export const PageTransitionAnimation = ({ children }: PageTransitionProps) => {
   });
 
   return (
-    <div className="will-change-[opacity,transform]" ref={ref}>
+    <div className="will-change-[opacity]" ref={ref}>
       {children}
     </div>
   );

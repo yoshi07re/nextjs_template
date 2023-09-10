@@ -16,11 +16,21 @@ export const SampleAnimation = ({
   useMekuriAnimation({
     onOnce: () => {
       if (ref.current) {
-        gsap.to(ref.current, {
-          opacity: 1,
-          duration: second,
-          ease: 'power3.out',
-        });
+        gsap.fromTo(
+          ref.current,
+          {
+            opacity: 0,
+            y: dir === 'y' ? 40 : 0,
+            x: dir === 'x' ? 40 : 0,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            x: 0,
+            duration: second,
+            ease: 'power3.out',
+          },
+        );
       }
     },
     onEnter: ({ intersectionObserver }) => {
@@ -30,8 +40,8 @@ export const SampleAnimation = ({
             ref.current,
             {
               opacity: 0,
-              y: dir === 'y' ? 24 : 0,
-              x: dir === 'x' ? 24 : 0,
+              y: dir === 'y' ? 40 : 0,
+              x: dir === 'x' ? 40 : 0,
             },
             {
               opacity: 1,
@@ -51,8 +61,8 @@ export const SampleAnimation = ({
     onLeave: () => {
       if (ref.current) {
         gsap.to(ref.current, {
-          y: dir === 'y' ? -24 : 0,
-          x: dir === 'x' ? -24 : 0,
+          y: dir === 'y' ? -40 : 0,
+          x: dir === 'x' ? -40 : 0,
           duration: second,
           ease: 'power3.out',
         });
@@ -60,7 +70,7 @@ export const SampleAnimation = ({
     },
   });
   return (
-    <div className="opacity-0 will-change-[opacity]" ref={ref}>
+    <div className="opacity-0" ref={ref}>
       {children}
     </div>
   );
