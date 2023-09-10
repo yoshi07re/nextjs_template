@@ -15,7 +15,7 @@ const LINKS = [
 
 export const Header = () => {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full px-6 pt-4">
+    <header className="fixed left-0 top-0 z-[999] w-full px-6 pt-4">
       <nav className="flex justify-end gap-4">
         {LINKS.map((li, i) => (
           <li key={i}>
