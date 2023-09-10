@@ -20,7 +20,7 @@ export const PageTransitionContext = ({
           window.scrollTo({ top: pos });
         },
       }}
-      mode="sync"
+      mode="wait"
       trigger={pathname}
     >
       {children}
