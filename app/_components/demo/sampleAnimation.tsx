@@ -61,6 +61,7 @@ export const SampleAnimation = ({
     onLeave: () => {
       if (ref.current) {
         gsap.to(ref.current, {
+          opacity: 0,
           y: dir === 'y' ? -40 : 0,
           x: dir === 'x' ? -40 : 0,
           duration: second,
