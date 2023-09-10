@@ -23,7 +23,7 @@ export const SampleAnimation = ({
         });
       }
     },
-    onEveryEnter: ({ intersectionObserver }) => {
+    onEnter: ({ intersectionObserver }) => {
       intersectionObserver(ref, (isIntersecting) => {
         if (isIntersecting && ref.current) {
           gsap.fromTo(
@@ -48,7 +48,7 @@ export const SampleAnimation = ({
         }
       });
     },
-    onEveryLeave: () => {
+    onLeave: () => {
       if (ref.current) {
         gsap.to(ref.current, {
           y: dir === 'y' ? -24 : 0,

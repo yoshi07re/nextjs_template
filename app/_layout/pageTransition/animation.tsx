@@ -29,5 +29,9 @@ export const PageTransitionAnimation = ({ children }: PageTransitionProps) => {
     },
   });
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div className="will-change-[opacity]" ref={ref}>
+      {children}
+    </div>
+  );
 };
