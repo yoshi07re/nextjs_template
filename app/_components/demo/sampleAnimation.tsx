@@ -30,13 +30,11 @@ export const SampleAnimation = ({
             ref.current,
             {
               opacity: 0,
-              willChange: 'opacity,transform',
               y: dir === 'y' ? 24 : 0,
               x: dir === 'x' ? 24 : 0,
             },
             {
               opacity: 1,
-              willChange: 'auto',
               y: 0,
               x: 0,
               duration: second,
