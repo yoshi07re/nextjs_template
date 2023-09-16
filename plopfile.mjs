@@ -16,9 +16,14 @@ export default function (plop) {
     actions: [
       {
         type: 'add',
-        path: '{{path}}/{{name}}/index.tsx',
+        path: '{{path}}/{{pascalCase name}}/{{name}}.tsx',
         templateFile: '.plop/index.tsx.hbs',
         skipIfExists: true,
+      },
+      {
+        type: 'add',
+        path: '{{path}}/{{pascalCase name}}/{{name}}.stories.tsx',
+        templateFile: '.plop/component.stories.tsx.hbs',
       },
     ],
   });
