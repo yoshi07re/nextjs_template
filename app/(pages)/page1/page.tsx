@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-import { SampleAnimation } from '@/app/_components/demo/sampleAnimation';
+import { SampleAnimation } from '@/app/_components/(demo)/sampleAnimation';
 
 const title = 'page1';
 const url = '';

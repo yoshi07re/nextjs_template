@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { SampleAnimation } from '@/app/_components/demo/sampleAnimation';
+import { SampleAnimation } from '@/app/_components/(demo)/sampleAnimation';
 
 const HomeContent = () => {
   return (
