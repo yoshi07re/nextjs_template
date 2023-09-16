@@ -12,7 +12,9 @@
     "lint:prettier": "prettier --check './**/*.{js,jsx,ts,tsx,json}'",
     "lint-fix:eslint": "npm run lint:eslint -- --fix",
     "lint-fix:prettier": "prettier --write './**/*.{js,jsx,ts,tsx,json}'",
-    "gen": "plop component"
+    "gen": "plop component",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@funtech-inc/mekuri": "^3.1.7",
@@ -42,5 +44,17 @@
   },
   "volta": {
     "node": "18.17.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.2",
+    "@storybook/addon-interactions": "^7.4.2",
+    "@storybook/addon-links": "^7.4.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.2",
+    "@storybook/nextjs": "^7.4.2",
+    "@storybook/react": "^7.4.2",
+    "@storybook/testing-library": "^0.2.1",
+    "eslint-plugin-storybook": "^0.6.13",
+    "storybook": "^7.4.2"
   }
 }

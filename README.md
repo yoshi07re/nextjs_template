@@ -5,6 +5,7 @@
 - GSAP
 - Lenis
 - Page Transition Animation
+- Storybook
 
 ## ローカルで実行
 
