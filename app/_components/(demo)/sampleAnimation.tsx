@@ -65,13 +65,12 @@ export const SampleAnimation = ({
           x: dir === 'x' ? -40 : 0,
           duration: second,
           ease: 'power3.out',
-          opacity: 0,
         });
       }
     },
   });
   return (
-    <div className="opacity-0 will-change-[opacity,transfrom]" ref={ref}>
+    <div className="opacity-0 will-change-[opacity]" ref={ref}>
       {children}
     </div>
   );
