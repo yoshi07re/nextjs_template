@@ -65,6 +65,7 @@ export const SampleAnimation = ({
           x: dir === 'x' ? -40 : 0,
           duration: second,
           ease: 'power3.out',
+          opacity: 0,
         });
       }
     },
