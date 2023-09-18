@@ -1,11 +1,11 @@
 import { Footer } from '@/app/_components/footer';
 import { Header } from '@/app/_components/header';
-import { LenisLayout } from '@/app/_layout/LenisLayout';
+import { LenisLayout } from '@/app/_layout/lenisLayout';
 import {
   PageTransitionAnimation,
   PageTransitionContext,
   PageTransitionLayout,
-} from '@/app/_layout/PageTransition';
+} from '@/app/_layout/pageTransition';
 
 interface MainLayoutProps {
   children: React.ReactNode;
