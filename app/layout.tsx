@@ -1,7 +1,7 @@
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 
-import { MainLayout } from '@/app/_layout/mainLayout';
+import { MainLayout } from '@/app/_layout/MainLayout';
 
 import type { Metadata } from 'next';
 

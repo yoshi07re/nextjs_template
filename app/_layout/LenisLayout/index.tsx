@@ -1,7 +1,6 @@
 'use client';
 
 import Lenis from '@studio-freight/lenis';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { createContext, useEffect, useState } from 'react';
 
 export const LenisContext = createContext<Lenis | null>(null);
@@ -13,7 +12,6 @@ const useLenis = () => {
     const instance = new Lenis({ duration: 0.8 });
     const raf = (time: number) => {
       instance.raf(time);
-      ScrollTrigger.update();
       requestAnimationFrame(raf);
     };
 
