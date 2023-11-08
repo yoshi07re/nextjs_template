@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@studio-freight/lenis':
-    specifier: ^1.0.26
-    version: 1.0.26
+    specifier: ^1.0.14
+    version: 1.0.14
   '@types/node':
     specifier: 20.5.9
     version: 20.5.9
@@ -3813,8 +3813,8 @@ packages:
       file-system-cache: 2.3.0
     dev: true
 
-  /@studio-freight/lenis@1.0.26:
-    resolution: {integrity: sha512-PLpPMtYoo50Z1otpUpGONK/BkJ0nrE7pY6Q1+KMWuPup+S+XFR/FJOXGkrtISzc6DtHgilbi1b6xDgDluFHsaA==}
+  /@studio-freight/lenis@1.0.14:
+    resolution: {integrity: sha512-tkKeh5UNylVMqxjItl3gBe0kEdOZil3392TCva1CPcsjvhvkC0sn1feHPAFRO3YmSzQUXCKJ3wjJL/lTaCDQmA==}
     dev: false
 
   /@swc/core-darwin-arm64@1.3.92:
