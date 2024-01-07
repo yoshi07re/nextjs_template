@@ -23,7 +23,7 @@ pnpm dev
 
 ## 詳細
 
-### ディレクトリ構造
+### ディレクトリ構造仮
 
 [参考:https://github.com/vercel/app-playground](https://github.com/vercel/app-playground)
 
