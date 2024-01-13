@@ -2,24 +2,6 @@ import { Button } from './button';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-/** mock of link component */
-type MockLinkProps = {
-  href: string;
-  className?: string;
-};
-
-function MockLink({
-  href,
-  children,
-  className,
-}: React.PropsWithChildren<MockLinkProps>) {
-  return (
-    <a className={className} href={href}>
-      {children}
-    </a>
-  );
-}
-
 const meta = {
   title: 'Button',
   component: Button,
