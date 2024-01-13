@@ -46,19 +46,3 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
 };
-
-export const AsLink: Story = {
-  args: {
-    variant: 'primary',
-    as: 'a',
-    href: '#',
-  },
-};
-
-export const AsLinkComponent: Story = {
-  args: {
-    variant: 'primary',
-    as: MockLink,
-    href: '#',
-  },
-};
