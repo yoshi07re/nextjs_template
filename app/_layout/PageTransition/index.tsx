@@ -133,16 +133,15 @@ export const PageTransition = (props: PageTransitionProps) => {
         mode="wait"
         onExitComplete={() => {
           if (isBackOrForward) {
+            const currentScrollY = window.scrollY;
             lenis?.scrollTo(beforeScrollTop, { immediate: true });
-            setBeforeScrollTop(0);
+            setBeforeScrollTop(currentScrollY);
+            console.log('ブラウザの戻る/進む', currentScrollY);
           } else {
             const currentScrollY = window.scrollY;
             setBeforeScrollTop(currentScrollY);
             lenis?.scrollTo(0, { immediate: true });
-            console.log(
-              'Saving scroll position on page transition:',
-              currentScrollY,
-            );
+            console.log('通常のページ遷移', currentScrollY);
           }
           setIsBackOrForward(false);
         }}
