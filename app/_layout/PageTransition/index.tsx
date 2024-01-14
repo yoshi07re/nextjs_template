@@ -134,14 +134,15 @@ export const PageTransition = (props: PageTransitionProps) => {
         onExitComplete={() => {
           if (isBackOrForward) {
             lenis?.scrollTo(beforeScrollTop, { immediate: true });
+            setBeforeScrollTop(0);
           } else {
             const currentScrollY = window.scrollY;
             setBeforeScrollTop(currentScrollY);
             lenis?.scrollTo(0, { immediate: true });
-            // console.log(
-            //   'Saving scroll position on page transition:',
-            //   currentScrollY,
-            // );
+            console.log(
+              'Saving scroll position on page transition:',
+              currentScrollY,
+            );
           }
           setIsBackOrForward(false);
         }}
