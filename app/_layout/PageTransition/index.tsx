@@ -66,7 +66,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import {
   ElementRef,
   ReactNode,
@@ -106,7 +106,7 @@ interface PageTransitionProps {
 }
 
 export const PageTransition = (props: PageTransitionProps) => {
-  const segment = useSelectedLayoutSegment();
+  const segment = usePathname();
   const lenis = useContext(LenisContext);
   const [beforeScrollTop, setBeforeScrollTop] = useState(0);
   const [isBackOrForward, setIsBackOrForward] = useState(false);

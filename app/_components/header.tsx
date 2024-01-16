@@ -11,6 +11,10 @@ const LINKS = [
     href: '/page1',
     title: 'page1',
   },
+  {
+    href: '/page2',
+    title: 'page2',
+  },
 ];
 
 export const Header = () => {
