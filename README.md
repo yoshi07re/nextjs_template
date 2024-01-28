@@ -34,3 +34,9 @@ pnpm dev
 ```sh
 pnpm gen
 ```
+
+### Storybook
+
+```sh
+pnpm storybook dev
+```
