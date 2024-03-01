@@ -3,12 +3,18 @@ import { Button } from './button';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Button',
+  title: 'ui/Button',
   component: Button,
+  tags: ['autodocs'],
+  argTypes: {
+    children: {
+      control: 'text',
+    },
+  },
   args: {
+    variant: 'default',
     children: 'Button',
   },
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -17,14 +23,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    variant: 'primary',
+    variant: 'default',
   },
 };
 
-export const Secondary: Story = {
+export const Primary: Story = {
   args: {
-    variant: 'secondary',
+    variant: 'primary',
   },
 };

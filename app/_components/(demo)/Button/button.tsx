@@ -4,11 +4,11 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const buttonVariants = cva('inline-block rounded-md p-4', {
+const buttonVariants = cva('inline-block rounded-md p-4 text-black', {
   variants: {
     variant: {
-      primary: 'bg-gray-900 text-white hover:bg-gray-800 active:bg-gray-700',
-      secondary:
+      default: 'bg-gray-900 text-white hover:bg-gray-800 active:bg-gray-700',
+      primary:
         'bg-white text-gray-900 outline outline-1 outline-gray-900 hover:bg-gray-100 active:bg-gray-200',
     },
   },
