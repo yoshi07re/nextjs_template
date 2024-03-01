@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-const LINKS = [
+const Links = [
   {
     href: '/',
     title: 'home',
@@ -22,7 +22,7 @@ export const Header = () => {
     <header className="fixed left-0 top-0 z-[999] w-full px-6 pt-4">
       <nav>
         <ul className="flex justify-end gap-4">
-          {LINKS.map((li, i) => (
+          {Links.map((li, i) => (
             <li key={i}>
               <Link href={li.href} scroll={false}>
                 {li.title}

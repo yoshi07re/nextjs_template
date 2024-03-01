@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-const LINKS = [
+const Links = [
   {
     href: '/',
     title: 'home',
@@ -16,14 +16,16 @@ const LINKS = [
 export const Footer = () => {
   return (
     <footer className="mt-auto px-24 py-4">
-      <nav className="flex justify-center gap-4">
-        {LINKS.map((li, i) => (
-          <li key={i}>
-            <Link href={li.href} scroll={false}>
-              {li.title}
-            </Link>
-          </li>
-        ))}
+      <nav>
+        <ul className="flex justify-center gap-4">
+          {Links.map((li, i) => (
+            <li key={i}>
+              <Link href={li.href} scroll={false}>
+                {li.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </footer>
   );
