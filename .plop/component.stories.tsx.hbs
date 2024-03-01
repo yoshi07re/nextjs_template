@@ -3,9 +3,18 @@ import { {{pascalCase name}} } from './{{name}}';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof {{pascalCase name}}> = {
-  title: 'Components/{{pascalCase name}}',
+  title: 'ui//{{pascalCase name}}',
   component: {{pascalCase name}},
   tags: ['autodocs'],
+  argTypes: {
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    // variant: 'default',
+    // children: 'Button',
+  },
   parameters: {
     layout: 'centered',
   },
@@ -19,7 +28,6 @@ export const Primary: Story = {
   // ここに初期プロパティを設定
   args: {
     // 例: あなたのコンポーネントの初期プロパティ
-    // variant: 'primary',
-    // asChild: false,
+    // variant: 'default',
   },
 };
