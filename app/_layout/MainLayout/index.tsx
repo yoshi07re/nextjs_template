@@ -11,12 +11,14 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Header />
-      <PageTransition>
-        <div className="flex min-h-screen flex-col">
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-      </PageTransition>
+      <div>
+        <PageTransition>
+          <div className="flex min-h-screen flex-col">
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </PageTransition>
+      </div>
       <UseAppHook />
     </>
   );
