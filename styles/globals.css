@@ -17,6 +17,15 @@
 }
 
 body {
+  overflow-x: hidden;
+  position: relative;
+  font-size: 0.9375rem;
+  font-feature-settings: 'palt';
+  line-height: 1;
+  letter-spacing: 0.1em;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,6 +33,31 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+html {
+  scroll-behavior: initial;
+  --base-vw: 375;
+}
+
+@media not (min-width: 375px) {
+  html {
+    font-size: calc(100 / var(--base-vw) * 1 * 16vw);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767.98px) {
+  html {
+    font-size: calc(100 / var(--base-vw) * 1 * 16vw);
+    --base-vw: 640;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: calc(100 / var(--base-vw) * 1 * 16vw);
+    --base-vw: 1920;
+  }
 }
 
 li {
@@ -34,12 +68,21 @@ address {
   font-style: normal;
 }
 
-html.lenis {
+:focus-visible {
+  outline-style: double;
+  outline-color: #ffd34e;
+}
+
+/*===============================================
+lenis
+===============================================*/
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
