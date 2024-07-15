@@ -32,7 +32,7 @@ const perspectiveVariants = {
     transition: { delay: 0.2, duration: 0.6, ease: 'easeIn' },
   },
   exit: {
-    y: '-20vh',
+    y: '-12vh',
     opacity: [1, 1, 0],
     filter: 'brightness(60%) contrast(135%) blur(0px)',
     transition: { delay: 0.1, duration: 1, ease: 'easeInOut' },
@@ -77,7 +77,7 @@ const Child = forwardRef<ElementRef<typeof motion.div>, ChildProps>(
             if (definition === 'exit') disableScroll();
           }}
           onAnimationComplete={(definition) => {
-            if (definition === 'exit') enableScroll();
+            if (definition === 'animate') enableScroll();
           }}
         >
           <LayoutRouterContext.Provider value={frozen}>
