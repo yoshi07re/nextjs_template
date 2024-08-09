@@ -14,6 +14,7 @@ import {
   useState,
 } from 'react';
 
+import { useLenis } from '@/hooks/useLenis';
 interface ChildProps {
   children: ReactNode;
   disableAnimations: boolean;
@@ -39,12 +40,64 @@ const perspectiveVariants = {
   },
 };
 
+// const Child = forwardRef<ElementRef<typeof motion.div>, ChildProps>(
+//   ({ disableAnimations, children }, ref) => {
+//     const willChange = useWillChange();
+
+//     const context = useContext(LayoutRouterContext);
+//     const frozen = useRef(context).current;
+
+//     const disableScroll = () => {
+//       const elements = document.querySelectorAll('body *');
+//       elements.forEach((element) => {
+//         if (element instanceof HTMLElement) {
+//           element.style.pointerEvents = 'none';
+//         }
+//       });
+//     };
+
+//     const enableScroll = () => {
+//       const elements = document.querySelectorAll('body *');
+//       elements.forEach((element) => {
+//         if (element instanceof HTMLElement) {
+//           element.style.pointerEvents = '';
+//         }
+//       });
+//     };
+
+//     return (
+//       <>
+//         <motion.div
+//           className="min-h-screen"
+//           initial="initial"
+//           animate="animate"
+//           exit="exit"
+//           style={{ willChange }}
+//           variants={disableAnimations ? {} : perspectiveVariants}
+//           onAnimationStart={(definition) => {
+//             if (definition === 'exit') disableScroll();
+//           }}
+//           onAnimationComplete={(definition) => {
+//             if (definition === 'animate') enableScroll();
+//           }}
+//         >
+//           <LayoutRouterContext.Provider value={frozen}>
+//             {children}
+//           </LayoutRouterContext.Provider>
+//         </motion.div>
+//       </>
+//     );
+//   },
+// );
 const Child = forwardRef<ElementRef<typeof motion.div>, ChildProps>(
   ({ disableAnimations, children }, ref) => {
     const willChange = useWillChange();
 
     const context = useContext(LayoutRouterContext);
     const frozen = useRef(context).current;
+
+    // Lenisのインスタンスをzustandから取得
+    const lenis = useLenis((state) => state.lenis);
 
     const disableScroll = () => {
       const elements = document.querySelectorAll('body *');
@@ -74,10 +127,16 @@ const Child = forwardRef<ElementRef<typeof motion.div>, ChildProps>(
           style={{ willChange }}
           variants={disableAnimations ? {} : perspectiveVariants}
           onAnimationStart={(definition) => {
-            if (definition === 'exit') disableScroll();
+            if (definition === 'exit') {
+              disableScroll();
+              lenis?.stop(); // lenisのスクロールを停止
+            }
           }}
           onAnimationComplete={(definition) => {
-            if (definition === 'animate') enableScroll();
+            if (definition === 'animate') {
+              enableScroll();
+              lenis?.start(); // lenisのスクロールを再開
+            }
           }}
         >
           <LayoutRouterContext.Provider value={frozen}>
